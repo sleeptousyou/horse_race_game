@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  total_get: 1
+  recovery_rate: 1.5
+  hit_ratio: 1.5
+  most_high_get: 1
+  year: 1
+
+two:
+  user_id: 1
+  total_get: 1
+  recovery_rate: 1.5
+  hit_ratio: 1.5
+  most_high_get: 1
+  year: 1

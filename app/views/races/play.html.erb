@@ -1,0 +1,28 @@
+<div class='container'>
+    <p><%= @list.race_name %></p>
+    <p>あなたが選択した馬</p>
+    <% @count=1 %>
+    <%= form_tag('/purchase/record') do %>
+        <table>
+            <tr><th>件数</th><th>式別</th><th>組み合わせ</th><th>投票金額</th></tr>
+            <% @selections.each do |select| %>
+                <tr>
+                    <td><%= @count %></td>
+                    <td><%= BettingTicket.find_by(id:select.betting_ticket).kind %></td>
+                    <td>
+                        <% if select.quinella==nil && select.trio==nil %>
+                            <%= select.win%>
+                        <% elsif select.quinella!=nil && select.trio==nil %>
+                            <%= select.win%>-<%= select.quinella%>
+                        <% else %>
+                            <%= select.win%>-<%= select.quinella%>-<%=select.trio %>
+                        <% end %>
+                    </td>
+                    <td><input name='used[][name]' value=100></td>
+                </tr>
+                <% @count=@count+1 %>
+            <% end %>
+            </table>
+    <input class='submit' value='購入する' type='submit'>
+    <% end %>
+</div>

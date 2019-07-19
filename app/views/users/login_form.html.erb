@@ -1,0 +1,11 @@
+<div class='container'>
+  <div id='login_box' >
+    <%= form_tag('/users/login') do %>
+      <p>メールアドレス</p>
+      <input class='login input' name='email'>
+      <p>パスワード</p>
+      <input class='login input' type='password' name='password'>
+      <input class='submit' type='submit' value='送信'>
+    <% end %>
+  </div>
+</div>

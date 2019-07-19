@@ -1,0 +1,5 @@
+<div class='container'>
+    <% @questions.each do |q| %>
+        <div class='predict'><%= link_to q.email,"/admin/document/#{q.id}" %></div>
+    <% end %>
+</div>

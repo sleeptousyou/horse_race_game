@@ -1,0 +1,5 @@
+class AddDeadline < ActiveRecord::Migration[5.2]
+  def change
+    add_column :lists,:deadline,:DateTime
+  end
+end

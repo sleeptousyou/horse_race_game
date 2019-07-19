@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_id: 1
+  user_id: 1
+  sum_price: 1
+  sum_get: 1
+  hit: 1
+
+two:
+  list_id: 1
+  user_id: 1
+  sum_price: 1
+  sum_get: 1
+  hit: 1

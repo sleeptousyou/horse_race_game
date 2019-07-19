@@ -1,0 +1,22 @@
+<div class='container'>
+    <% if @list.deadline < Time.now && @rank!=nil %>
+        <p>今週のレース結果</p>
+        <p><%= @list.race_name %></p> 
+        <table class='table　result'>
+            <tr><th>着順</th><th> 枠番 </th><th> 馬番 </th><th>馬名</th><th>性別</th><th>騎手</th></tr>
+                <tr><td>１着</td><td class="table_center gate<%= @result_horse1.gate_number %>"><%= @result_horse1.gate_number %></td><td class='table_center'><%= @result_horse1.horse_number %></td><td><%= @result_horse1.horse_name %></td><td><%= @result_horse1.sex %><%= @result_horse1.year %></td><td><%= @result_horse1.rider %></td>
+                <tr><td>２着</td><td class="table_center gate<%= @result_horse2.gate_number %>"><%= @result_horse2.gate_number %></td><td class='table_center'><%= @result_horse2.horse_number %></td><td><%= @result_horse2.horse_name %></td><td><%= @result_horse2.sex %><%= @result_horse2.year %></td><td><%= @result_horse2.rider %></td>
+                <tr><td>３着</td><td class="table_center gate<%= @result_horse3.gate_number %>"><%= @result_horse3.gate_number %></td><td class='table_center'><%= @result_horse3.horse_number %></td><td><%= @result_horse3.horse_name %></td><td><%= @result_horse3.sex %><%= @result_horse3.year %></td><td><%= @result_horse3.rider %></td>
+        </table>
+    <% else %>
+        <p>今週の重賞レース</p>
+        <p><%= @list.race_name %></p> 
+        <%= link_to '投票する','/races/bet',class: 'link_btn' %> 
+        <table class='table'>
+            <tr><th> 枠番 </th><th> 馬番 </th><th>馬名</th><th>性別</th><th>騎手</th></tr>
+            <% @horses.each do |horse| %>
+                <tr><td class="table_center gate<%= horse.gate_number %>"><%= horse.horse_number %></td><td class='table_center'><%= horse.gate_number %></td><td><%= horse.horse_name %></td><td><%= horse.sex %><%= horse.year %></td><td><%= horse.rider %></td>
+            <% end %>
+        </table>
+    <%end%>
+</div>

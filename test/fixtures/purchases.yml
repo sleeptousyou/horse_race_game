@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  prize_number: 1
+  race_id: 1
+  price: 1
+  get: 1
+  betting_ticket: 1
+
+two:
+  user_id: 1
+  prize_number: 1
+  race_id: 1
+  price: 1
+  get: 1
+  betting_ticket: 1

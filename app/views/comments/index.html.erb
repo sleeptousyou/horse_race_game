@@ -1,0 +1,12 @@
+<div class='container'>
+    <p><%= @list.race_name %>の投稿一覧</p>
+    <p><%= link_to '投稿する','/comments/text'%></p>
+    <% if @boards!=nil %>
+        <% @boards.each do |board| %>
+            <div class='comment'>
+                <p><%= User.find_by(id: board.user_id).name %></p>
+                <p><%= board.comment%></p>
+            </div>
+        <% end %> 
+    <% end %>
+</div>

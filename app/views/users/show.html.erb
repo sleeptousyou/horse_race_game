@@ -1,0 +1,26 @@
+<div class='container'>
+<%= @user.name %>
+<p>残額<%= @money.unused %>円</p>
+<p>今週の購入馬券</p>
+    <% @count=1 %>
+    <table>
+        <tr><th>件数</th><th>式別</th><th>組み合わせ</th><th>購入金額</th></tr>
+        <% @purchases.each do |select| %>
+            <tr>
+                <td><%= @count %></td>
+                <td><%= BettingTicket.find_by(id:select.betting_ticket).kind %></td>
+                <td>
+                    <% if select.quinella==nil && select.trio==nil %>
+                        <%= select.win%>
+                    <% elsif select.quinella!=nil && select.trio==nil %>
+                        <%= select.win%>-<%= select.quinella%>
+                    <% else %>
+                        <%= select.win%>-<%= select.quinella%>-<%=select.trio %>
+                    <% end %>
+                </td>
+                <td><%= select.price %></td> 
+            </tr>
+            <% @count=@count+1 %>
+        <% end %>
+    </table>
+</div>

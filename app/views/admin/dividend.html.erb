@@ -1,0 +1,29 @@
+<div class='container'>
+    <%= form_tag('/admin/dividend_record') do %>
+        <p>単勝</p>
+        <input name='win'>
+        <p>複勝1</p>
+        <input name='place1'>
+        <p>複勝2</p>
+        <input name='place2'>
+        <p>複勝3</p>
+        <input name='place3'>
+        <p>枠連</p>
+        <input name='bracket_quinella'>
+        <p>馬連</p>
+        <input name='quinella'>
+        <p>馬単</p>
+        <input name='exacta'>
+        <p>ワイド（１着&２着）</p>
+        <input name='quinella_place1'>
+        <p>ワイド（１着&３着）</p>
+        <input name='quinella_place2'>
+        <p>ワイド（２着&３着）</p>
+        <input name='quinella_place3'>
+        <p>三連複</p>
+        <input name='trio'>
+        <p>三連単</p>
+        <input name='trifecta'>
+        <input class='submit' type='submit' value='登録'>
+    <% end %>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  race_name: MyString
+  horce_number: 1
+  gate_number: 1
+  horse_name: MyString
+  sex: MyString
+  year: 1
+  rider: MyString
+
+two:
+  race_name: MyString
+  horce_number: 1
+  gate_number: 1
+  horse_name: MyString
+  sex: MyString
+  year: 1
+  rider: MyString

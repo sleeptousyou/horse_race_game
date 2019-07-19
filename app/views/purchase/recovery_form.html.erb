@@ -1,0 +1,12 @@
+<div class='container'>
+    <h2><%= @list.year %>のランキング</h2>
+    <p><%= link_to'回収率',"/purchase/recovery_form/#{1}",class: 'link_btn'%> <%= link_to'的中率',"/purchase/recovery_form/#{2}",class: 'link_btn'%> <%= link_to'払戻合計',"/purchase/recovery_form/#{3}",class: 'link_btn'%> <%= link_to'最高払戻額',"/purchase/recovery_form/#{4}",class: 'link_btn'%></p>
+    <table>
+        <% @count=1 %>
+        <tr><th>順位</th><th>ユーザー名</th><th>回収率</th><th>的中率</th><th>払戻合計</th><th>最高払戻額</th></tr>
+        <% @marks.each do |mark| %>
+            <tr><td><%= @count %></td><td><%= User.find_by(id: mark.user_id).name%></td><td><%= mark.recovery_rate %>%</td><td><%= mark.hit_ratio %>%</td><td><%= mark.total_get %>円</td><td><%= mark.most_high_get %>円</td></tr>
+            <% @count=@count+1 %>
+        <% end %>
+    </table>
+</div>

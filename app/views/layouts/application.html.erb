@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>HorseRace</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application',media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div id="header1">
+    <p id="title"><%= link_to '競馬予想バトル','/main/top',class: 'link_btn'%></p>
+    <% if session[:user_id]==nil %>      
+      <ul>
+        <li class="nonlog"><%= link_to '新規登録','/users/new',class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to 'ログイン','/users/login_form',class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to 'お問い合わせ','/users/mail',class: 'link_btn'%></li> 
+      </ul>
+    <% else %>
+      <ul>
+        <li class="nonlog"><%= link_to User.find_by(id:@current_user.id).name,"/users/#{@current_user.id}/show",class: 'link_btn' %></li>
+        <li class="nonlog"><%= link_to @list.race_name,'/races/large_prize1',class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to '予想一覧','/purchase/index',class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to '掲示板','/comments/index',class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to 'ランキング',"/purchase/recovery_form/#{1}",class: 'link_btn'%></li>
+        <li class="nonlog"><%= link_to 'ログアウト','/users/logout',{method:'post'}%></li> 
+        <% if @current_user.name == 'master_g' %>
+          <li class="nonlog"><%= link_to 'レース登録','/admin/list1',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '出走馬登録','/admin/entry',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '金額更新','/admin/give',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '着順登録','/admin/rank',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '配当登録','/admin/dividend',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '計算','/admin/calculate',class: 'link_btn' %></li>
+          <li class="nonlog"><%= link_to '質問','/admin/question',class: 'link_btn' %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <div class='all'>
+    <div class='flash'><%= flash[:notice] %></div>
+    <%= yield %>
+  </div>
+  </body>
+</html>

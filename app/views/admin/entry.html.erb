@@ -1,0 +1,21 @@
+<div class='container'>
+    <%= form_tag('/admin/record') do %>
+        <p>レース名</p>
+        <input name='race_name' value="<%= @list.race_name %>">
+        <p>馬番</p>
+        <input name='horce_number'>
+        <p>枠番</p>
+        <input name='gate_number'>
+        <p>馬名</p>
+        <input name='horse_name'>
+        <p>性別</p>
+        <input name='sex'>
+        <p>年齢</p>
+        <input name='year'>
+        <p>騎手</p>
+        <input name='rider'>
+        <p>重賞番号</p>
+        <input name='prize_number'>
+        <input class='submit' type='submit',value='登録'>
+    <% end %>
+</div>

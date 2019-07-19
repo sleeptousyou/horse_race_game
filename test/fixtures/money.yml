@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  prize_number: 1
+  unused: 1
+  used: 1
+
+two:
+  user_id: 1
+  prize_number: 1
+  unused: 1
+  used: 1

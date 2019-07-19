@@ -1,0 +1,19 @@
+
+<div class='container'>
+    <div id='login_box' >
+        <% if !@user.errors.full_messages.empty? %>
+            <% @user.errors.full_messages.each do |message| %>
+                <p><%= message %></p>
+            <% end %>
+        <% end %>
+        <%= form_tag('/users/create') do %>
+            <p>ニックネーム</p>
+            <input class="login input" name='name'>
+            <p>メールアドレス</p>
+            <input class='login input' name='email'>
+            <p>パスワード</p>
+            <input class='login input' type='password' name='password'>
+            <input class='submit' type='submit' value='送信'>
+        <% end %>
+    </div>
+</div>

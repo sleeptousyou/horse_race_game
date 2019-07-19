@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list_id: 1
+  win: 1
+  place: 1
+  blacket_quinella: 1
+  quinella: 1
+  exacta: 
+  trio: 1
+  trifecta: 1
+
+two:
+  list_id: 1
+  win: 1
+  place: 1
+  blacket_quinella: 1
+  quinella: 1
+  exacta: 
+  trio: 1
+  trifecta: 1

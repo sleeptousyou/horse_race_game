@@ -1,0 +1,22 @@
+<div class='container'>
+<p><%= @list.race_name %></p> 
+
+<p>式別を選択して下さい</p>
+<div>
+    <%= link_to '単勝','/races/win/1',class: 'link_btn' %>
+    <%= link_to '複勝','/races/win/2',class: 'link_btn' %>
+    <%= link_to '枠連','/races/quinella/3',class: 'link_btn'  %>
+    <%= link_to 'ワイド','/races/quinella/4',class: 'link_btn'  %>
+    <%= link_to '馬連','/races/quinella/5',class: 'link_btn'  %>
+    <%= link_to '馬単','/races/quinella/6',class: 'link_btn'  %>
+    <%= link_to '三連複','/races/trio/7',class: 'link_btn'  %>
+    <%= link_to '三連単','/races/trio/8',class: 'link_btn'  %>
+</div>
+
+    <table>
+        <tr><th>枠番</th><th>馬番</th><th>馬名</th><th>性別</th><th>騎手</th></tr>
+        <% @horses.each do |horse| %>
+            <tr><td class="table_center gate<%= horse.gate_number %>"><%=  horse.gate_number %></td><td class='table_center'><%= horse.horse_number %></td><td><%= horse.horse_name %></td><td><%= horse.sex %><%= horse.year %></td><td><%= horse.rider %></td></tr>    
+        <% end %>
+    </table>
+</div>

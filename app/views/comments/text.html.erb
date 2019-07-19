@@ -1,0 +1,7 @@
+<div class='container'>
+    <%= form_tag('/comments/transmission') do %>
+        <p><%= @list.race_name%>についてコメントする</p>
+        <textarea name='comment' class='comment'></textarea>
+        <input class='submit' type='submit' value='投稿する'>
+    <% end %>
+</div>

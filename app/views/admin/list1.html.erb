@@ -1,0 +1,12 @@
+<div class='container'>
+    <p>レース登録</p>
+    <%= form_tag('/admin/list2') do %>
+        <p>レース名</p>
+        <input name='name'><br>
+        <p>年分</p>
+        <input name='year'>
+        <p>発送時刻（2019-07-01 19:30:00のように入力）</p>
+        <input name='deadline'>
+        <input class='submit' value='登録' type='submit'>
+    <% end %>
+</div>

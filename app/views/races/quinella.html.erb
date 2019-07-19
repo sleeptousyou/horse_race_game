@@ -1,0 +1,13 @@
+<div class='container'>
+    <p><%= @list.race_name %></p> 
+    <p><%= @betting.kind%></p> 
+    <%= form_tag("/races/value2/#{@betting_ticket}") do %>
+            <table>
+                <tr><th>枠番</th><th>馬番</th><th>馬名</th><th>性別</th><th>騎手</th><th>選択1</th><th>選択2</th></tr>
+                    <% @horses.each do |horse| %>
+                        <tr><td class="table_center gate<%= horse.gate_number %>"><%= horse.gate_number %></td><td class='table_center'><%=  horse.horse_number %></td><td><%= horse.horse_name %></td><td><%= horse.sex %><%= horse.year %></td><td><%= horse.rider %></td><td class='table_center'><%= check_box 'first_horse',horse.horse_number %></td><td class='table_center'><%= check_box 'second_horse',horse.horse_number %></td></tr>
+                    <% end %>
+            </table>
+    <input class='submit' type='submit' value='送信' >
+    <% end %>
+</div>

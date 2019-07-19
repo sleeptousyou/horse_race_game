@@ -1,0 +1,9 @@
+<div class='container'>
+    <p>今週のレースの購入者一覧</p>
+    <% if @ballots!=nil %>
+        <% @ballots.each do |ballot| %>
+            <% @user=User.find_by(id:ballot.user_id) %>
+            <div class='predict'><%= link_to @user.name,"/users/#{@user.id}/show",class: 'link_btn' %></div>
+        <% end %>
+    <% end %>
+</div>

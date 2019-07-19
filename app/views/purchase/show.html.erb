@@ -1,0 +1,22 @@
+<div class='container'>
+    <table>
+        <tr><th>件数</th><th>式別</th><th>組み合わせ</th><th>購入金額</th></tr>
+        <% @purchase.each do |select| %>
+            <tr>
+                <td><%= @count %></td>
+                <td><%= BettingTicket.find_by(id:select.betting_ticket).kind %></td>
+                <td>
+                    <% if select.quinella==nil && select.trio==nil %>
+                        <%= select.win%>
+                    <% elsif select.quinella!=nil && select.trio==nil %>
+                        <%= select.win%>-<%= select.quinella%>
+                    <% else %>
+                        <%= select.win%>-<%= select.quinella%>-<%=select.trio %>
+                    <% end %>
+                </td>
+                <td><%= select.price %></td> 
+            </tr>
+            <% @count=@count+1 %>
+        <% end %>
+    </table>
+</div>
